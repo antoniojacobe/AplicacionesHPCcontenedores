@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mpi-deployment
+  labels:
+    app: mpi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mpi
+  template:
+    metadata:
+      labels:
+        app: mpi
+    spec:
+      containers:
+      - name: mpi
+        image: toni1707/repositorytoni
+        ports:
+        - containerPort: 80
