@@ -1,0 +1,9 @@
+version: "3.9"
+services:
+  mpi-cpi:
+    image: toni1707/mpi:latest
+    deploy:
+      replicas: 4
+    ports:
+    - "22"
+    
