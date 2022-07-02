@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mpi-cpi-deployment
+  namespace: default
+  labels:
+    app: mpi
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: mpi
+  template:
+    metadata:
+      labels:
+        app: mpi
+    spec:
+      containers:
+      - name: mpi
+        image: toni1707/mpi:1.0
+        ports:
+        - containerPort: 22
